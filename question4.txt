@@ -1,0 +1,19 @@
+Q4.Q4. Create an S3 bucket and deploy the reactjs static application on it and provide with the 
+public url for use
+
+=>Open Amazon S3 select bucket and create a bucket.specify bucket name and in object ownership make ACLs enabled and avoid the tick mark in Block public access setting so as to avoid blocking then click on create bucket
+
+=>meanwhile copy the amazon react folder into a newly created folder on desktop.open the newly created folder and then oprn amazon rect then clear the path and open cmd and enter code . so as to open vs code
+ 
+=>Before that install nodejs in pc of 64 bit and then open vs code and select terminal->new terminal now type (npm i) command then node_modules files are created  after that type (npm run build) command so as to run build folder.
+
+=>when we come back and open the newly created folder we can observe the node_modules and build folders into it.
+
+=>in beginning we craeted the bucket go into it and upload the files in the build and two folders in the build folder
+
+=>And then goto the properties and scroll it to the last and make it enable and come back to the objects selcet all and got actions and make it public.
+
+=>now copy the url from the permissions and paste it over new tab we can see the amazonaws.com webpage
+
+URL: http://newbuckkett.s3-website-us-east-1.amazonaws.com/
+

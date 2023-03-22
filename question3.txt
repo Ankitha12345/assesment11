@@ -1,0 +1,26 @@
+ Q3).Create an rds connection with ec2 instance and use it to create an sql database and a 
+sample table
+
+=>Launch an instasnce specify the name,craete with an ubuntu in network settings select the default vpc and then selct the key pair in inbound security groups rules type must be in MYSQL/Aurora and source type must be in Anywhere after that launch the instance.
+
+=>after that go to the rds and select the database and create the database choose a database creation method select easy create and in engine options select MYSQL and in templates selct the free tier and give the maste password and confirm the password after that create the database
+
+=>for craetion of databse it takes some time wait upto the database come to available after that goto the database and scroll down click on set up EC2 connection after that select ur created ec2 instance and continue and then confirm and set up
+
+=>Now goto the created EC2 instance and select it and in security groups selct the (launch-wizard-10) and then click on add rules select type as SSH and custom as Anywhere-IPv4 and save rules .
+
+=>Now we can check network connectivity with reachability Analyzer by above process
+
+=>now connect the ec2 instance execute thw following commands
+1.sudo su
+2.apt-get install mysql-client
+3.[Y/n]-->y
+4.mysql -h <rds endpoint> -P 3306 -u admin -p
+5.enter the password given in the creation of databse
+6.CREATE DATABSE <database name>;
+7.USE <database name>;
+8.CREATE TABLE <table name> (id INT NOT NULL AUTO_INCREMENT,name VARCHAR(50) NOT NULL,PRIMARY KEY(id));
+9.insert INTO <table name> VALUES ('xyz'),('abc'),('pqr');
+10.selct * from t1;
+
+=> atlast a table will be displayed.

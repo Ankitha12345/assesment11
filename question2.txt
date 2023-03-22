@@ -1,0 +1,55 @@
+Q2. Create an EC2 intance for a Reactjs application and deploy the application and provide 
+the public ip for it, also enable the cloud monitoring on these instances
+
+=>Firsofall craete the instance by specifying the name and slect ubuntu and launch instance
+
+=>Now selct the created instance and connect it by executing forllowing commands
+⌨️ Source Code
+#Update ubuntu instance
+sudo apt-get update
+
+
+#Upgrade ubuntu system
+sudo apt-get upgrade
+
+
+#install ngnix
+sudo apt-get install nginx -y
+
+
+#nginx version
+nginx -v
+
+
+#restart nginx
+sudo systemctl restart nginx
+
+
+#install nodejs ubuntu
+sudo apt-get install curl
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+
+#reate the react project. (create-react-app)
+npx create-react-app react-tutorial
+
+
+#Build the react project
+cd react-tutorial
+npm run build
+
+
+#Run the project
+npm start
+
+=>After executing all the commands it will be compiles successfully.
+
+=>Now goto the instance and select it and then goto the security groups and click on the link and then click on add rule and keep type as custom TCP and port range as 3000 and then click on save rules
+
+=>Atlast goto the connected page and copy the public address and paste it over a new tab including :3000
+
+IP address 35.174.205.220:3000
+
+=>for enabling the cloud monitoring on these instances goto the instance and select it and click on monitoring and selct the option called manage detailed monitoring enable it and confirm and now goto the add to dashboard and then create the dashboard and then select it we can see the different graphs intit.
+
